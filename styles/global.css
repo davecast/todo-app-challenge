@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #3c484e;
+  font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(
+    45deg,
+    #8607fd 0,
+    #b370f3 71%,
+    #fa75f3 100%
+  );
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.Main {
+  grid-template-columns: minmax(auto, 980px);
+  display: grid;
+  justify-content: center;
+}
+.Container {
+  padding: 0 25px;
+}
+
+.Header {
+  color: #fff;
+  padding: 25px 0;
+}
+.Header__title {
+  font-size: 28px;
+  line-height: 28px;
+}
+.Header__salute {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.Footer {
+  border-top: 1px solid #ededed;
+  padding: 25px 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.Footer__heart {
+  color: red;
+}
+
+.Tasker {
+  background-color: #fff;
+  padding: 35px 0 0;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  max-height: calc(100vh - 151px);
+  height: calc(100vh - 151px);
+}
+.Add {
+  width: 100%;
+  border: 1px solid #d2cfcf;
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 32px;
+}
+.Add__input {
+  width: calc(100% - 40px);
+  height: 100%;
+  border-radius: 40px;
+  border: none;
+  padding: 5px 15px;
+  font-size: 14px;
+  outline: none;
+}
+.Edit__input {
+  width: 100%;
+  border: none;
+  border-left: 5px solid #d2cfcf;
+  padding: 15px 15px;
+  font-size: 14px;
+  outline: none;
+}
+.Add__button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-image: linear-gradient(
+    45deg,
+    #8607fd 0,
+    #b370f3 71%,
+    #fa75f3 100%
+  );
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  outline: none;
+}
+
+.TaskList {
+  padding: 0 0 32px;
+  height: calc(100vh - 270px);
+  max-height: calc(100vh - 270px);
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.Task_empty {
+  font-size: 14px;
+}
+.Task {
+  min-height: 80px;
+  font-size: 14px;
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d4d4d4;
+}
+.Task__content {
+  display: flex;
+  align-items: center;
+}
+.Task__content label {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.Task:last-child {
+  margin: 0;
+}
+.Task__name {
+  width: 100%;
+  padding-right: 15px;
+  font-size: 16px;
+  line-height: 29px;
+  font-weight: bold;
+}
+
+.Task__completed {
+  text-decoration: line-through;
+}
+.Task__actions {
+  width: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+.Task__button {
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 18px;
+  cursor: pointer;
+}
+.Task__button:first-child {
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    display: grid;
+    grid-template-columns: minmax(auto, 980px);
+    justify-content: center;
+  }
+}
