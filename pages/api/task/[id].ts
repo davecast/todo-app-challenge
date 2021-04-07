@@ -13,7 +13,20 @@ const getOneTask = async (
 
   response.statusCode = 200 //ok
   response.setHeader('Content-type', 'application/json')
-  response.end(JSON.stringify({ data: task }))
+  response.end(JSON.stringify({ ...task }))
+}
+
+const deleteOneTask = async (
+  request: NextApiRequest,
+  response: NextApiResponse,
+  id: ObjectId
+) => {
+  const { db } = await connectToDatabase()
+  const deleteTask = await db.collection('tasks').deleteOne({ _id: id })
+
+  response.statusCode = 200 //ok
+  response.setHeader('Content-type', 'application/json')
+  response.end(JSON.stringify({ deletedCount: deleteTask.deletedCount }))
 }
 
 const updateOneTask = async (
@@ -26,14 +39,12 @@ const updateOneTask = async (
     .collection('tasks')
     .updateOne(
       { _id: id },
-      { $set: { description: 'actualizada las descripcion 22223213 12321' } }
+      { $set: request.body }
     )
 
   response.statusCode = 200 //ok
   response.setHeader('Content-type', 'application/json')
-  response.end(JSON.stringify({ data: {
-    modifiedCount: task.modifiedCount,
-  } }))
+  response.end(JSON.stringify({  modifiedCount: task.modifiedCount}))
 }
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
@@ -45,6 +56,9 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       break
     case 'PUT':
       await updateOneTask(request, response, id)
+      break
+    case 'DELETE':
+      await deleteOneTask(request, response, id)
       break
     default:
       response.statusCode = 404
