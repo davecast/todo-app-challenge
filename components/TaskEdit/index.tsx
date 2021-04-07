@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { updateTask } from '../../services/tasks'
 
 interface TaskEditProps {
@@ -19,6 +19,12 @@ const TaskEdit = ({
   const $editTask = useRef<HTMLInputElement>(null)
 
   const [editTask, setEditTask] = useState<string>(description)
+
+  useEffect(() => {
+    if ($editTask) {
+      $editTask?.current?.focus()
+    }
+  }, [])
 
   const handleChange = () => {
     setEditTask($editTask?.current?.value || '')
@@ -45,16 +51,25 @@ const TaskEdit = ({
   }
 
   return (
-    <div>
+    <div className="Task">
       <input
+        className="Edit__input"
         ref={$editTask}
         type="text"
         value={editTask}
         onChange={handleChange}
       />
-      <div>
-        <button onClick={handleSave} disabled={description === editTask} >save</button>
-        <button onClick={handleCancel}>cancel</button>
+      <div className="Task__actions">
+        <button
+          className="Task__button"
+          onClick={handleSave}
+          disabled={description === editTask}
+        >
+          <i className="far fa-save"></i>
+        </button>
+        <button className="Task__button" onClick={handleCancel}>
+          <i className="far fa-window-close"></i>
+        </button>
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ const Task = ({ information, tasks, setTasks }: TaskProps) => {
   }
 
   return (
-    <article>
+    <>
       {!edit ? (
         <TaskItem
           information={information}
@@ -35,7 +35,7 @@ const Task = ({ information, tasks, setTasks }: TaskProps) => {
           handleEdit={handleEdit}
         />
       )}
-    </article>
+    </>
   )
 }
 

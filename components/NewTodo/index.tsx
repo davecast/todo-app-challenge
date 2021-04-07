@@ -36,17 +36,19 @@ const NewTodo = ({ task, setTask, tasks, setTasks }: NewTodoProps) => {
   }
 
   return (
-    <div>
+    <div className="Add">
       <input
+        className="Add__input"
         ref={$toDoInput}
         onKeyDown={handleEnter}
         onChange={handleOnChange}
         type="text"
         name="task"
         value={task}
+        placeholder="Add task"
       />
-      <button type="button" onClick={handleAddToTask}>
-        Agregar
+      <button className="Add__button" type="button" onClick={handleAddToTask}>
+        +
       </button>
     </div>
   )

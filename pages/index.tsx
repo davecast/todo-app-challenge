@@ -9,20 +9,21 @@ const Home = () => {
   const [loadingTasks, setLoadingTasks] = useState(false)
 
   return (
-    <div>
-      <h1>To do system</h1>
-      <NewTodo
-        task={task}
-        setTask={setTask}
-        tasks={tasks}
-        setTasks={setTasks}
-      />
-      <TodoList
-        tasks={tasks}
-        setTasks={setTasks}
-        loadingTasks={loadingTasks}
-        setLoadingTasks={setLoadingTasks}
-      />
+    <div className="Tasker">
+      <div className="Container">
+        <NewTodo
+          task={task}
+          setTask={setTask}
+          tasks={tasks}
+          setTasks={setTasks}
+        />
+        <TodoList
+          tasks={tasks}
+          setTasks={setTasks}
+          loadingTasks={loadingTasks}
+          setLoadingTasks={setLoadingTasks}
+        />
+      </div>
     </div>
   )
 }

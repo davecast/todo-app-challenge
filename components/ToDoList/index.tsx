@@ -31,7 +31,7 @@ const TodoList = ({
   }
 
   return (
-    <section>
+    <section className="TaskList">
       {tasks.length > 0 &&
         tasks
           .map(({ _id, description, status }: TTask) => {
