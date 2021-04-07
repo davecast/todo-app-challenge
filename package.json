@@ -20,7 +20,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "heroku-postbuild": "npm run build"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -31,6 +32,9 @@
   "keywords": [],
   "author": "David Castillo",
   "license": "ISC",
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "engines": {
     "node": "14.x"
   }
