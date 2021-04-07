@@ -2,14 +2,14 @@ import React, { useState, useRef } from 'react'
 
 import { addTask } from '../../services/tasks'
 
-interface ToDoFormProps {
+interface NewTodoProps {
   task: string
   setTask: any
   tasks: Array<object>
   setTasks: any
 }
 
-const ToDoForm = ({ task, setTask, tasks, setTasks }: ToDoFormProps) => {
+const NewTodo = ({ task, setTask, tasks, setTasks }: NewTodoProps) => {
   const $toDoInput = useRef<HTMLInputElement>(null)
 
   const handleOnChange = () => {
@@ -52,4 +52,4 @@ const ToDoForm = ({ task, setTask, tasks, setTasks }: ToDoFormProps) => {
   )
 }
 
-export default ToDoForm
+export default NewTodo

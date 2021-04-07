@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import ToDoForm from '../components/ToDoForm'
-import ToDoList from '../components/ToDoList'
+import NewTodo from '../components/NewTodo'
+import TodoList from '../components/TodoList'
 
 const Home = () => {
   const [tasks, setTasks] = useState([])
@@ -11,13 +11,13 @@ const Home = () => {
   return (
     <div>
       <h1>To do system</h1>
-      <ToDoForm
+      <NewTodo
         task={task}
         setTask={setTask}
         tasks={tasks}
         setTasks={setTasks}
       />
-      <ToDoList
+      <TodoList
         tasks={tasks}
         setTasks={setTasks}
         loadingTasks={loadingTasks}

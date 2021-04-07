@@ -4,19 +4,19 @@ import Task from '../Task'
 
 import { getTasks } from '../../services/tasks'
 
-interface ToDoListProps {
+interface TodoListProps {
   tasks: any
   setTasks: any
   loadingTasks: any
   setLoadingTasks: any
 }
 
-const ToDoList = ({
+const TodoList = ({
   tasks,
   setTasks,
   loadingTasks,
   setLoadingTasks,
-}: ToDoListProps) => {
+}: TodoListProps) => {
   useEffect(() => {
     setLoadingTasks(true)
     getTasks().then((res) => {
@@ -49,4 +49,4 @@ const ToDoList = ({
   )
 }
 
-export default ToDoList
+export default TodoList
