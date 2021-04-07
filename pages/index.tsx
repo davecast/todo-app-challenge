@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import NewTodo from '../components/NewTodo'
-import TodoList from '../components/TodoList'
+import NewTodo from '@components/NewTodo'
+import TodoList from '@components/TodoList'
 
 const Home = () => {
   const [tasks, setTasks] = useState([])

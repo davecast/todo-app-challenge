@@ -1,4 +1,4 @@
-import { updateTask, deleteTask } from '../../services/tasks'
+import { updateTask, deleteTask } from '@services/tasks'
 
 interface TaskEditProps {
   information: TTask

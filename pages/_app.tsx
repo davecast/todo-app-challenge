@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app'
 
-import Layout from "../components/Layout"
+import Layout from '@components/Layout'
 
-import "../styles/global.css"
+import '../styles/global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </Layout>
   )
-  
 }
 
 // Only uncomment this method if you have blocking data requirements for

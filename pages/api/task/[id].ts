@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { ObjectId } from 'mongodb'
 
-import { connectToDatabase } from '../../../middleware/database'
+import { connectToDatabase } from '@database'
 
 const getOneTask = async (
   request: NextApiRequest,

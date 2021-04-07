@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { updateTask, deleteTask } from '../../services/tasks'
 
-import TaskEdit from '../TaskEdit'
-import TaskItem from '../TaskItem'
+import TaskEdit from '@components/TaskEdit'
+import TaskItem from '@components/TaskItem'
 
 interface TaskProps {
   information: TTask

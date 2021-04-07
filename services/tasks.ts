@@ -1,5 +1,5 @@
-import request from '../utils/request'
-import { TASK, TASK_DETAIL } from '../endpoints'
+import request from '@utils/request'
+import { TASK, TASK_DETAIL } from '@endpoints'
 
 /**
  * Get all tasks from collection

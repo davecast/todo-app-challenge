@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@database": ["middleware/database.ts"],
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+      "@utils/*": ["utils/*"],
+      "@endpoints": ["endpoints.ts"],
+    },
     "target": "es6",
     "lib": [
       "dom",

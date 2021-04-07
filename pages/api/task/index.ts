@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { connectToDatabase } from '../../../middleware/database'
+import { connectToDatabase } from '@database'
 
 const setTask = async (request: NextApiRequest, response: NextApiResponse) => {
   const {db} = await connectToDatabase();

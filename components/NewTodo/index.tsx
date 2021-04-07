@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 
-import { addTask } from '../../services/tasks'
+import { addTask } from '@services/tasks'
 
 interface NewTodoProps {
   task: string

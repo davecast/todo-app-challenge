@@ -1,4 +1,7 @@
 {
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "name": "todo",
   "version": "1.0.0",
   "description": "",
@@ -32,9 +35,6 @@
   "keywords": [],
   "author": "David Castillo",
   "license": "ISC",
-  "cacheDirectories": [
-    ".next/cache"
-  ],
   "engines": {
     "node": "14.x"
   }

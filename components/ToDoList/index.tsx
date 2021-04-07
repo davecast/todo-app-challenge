@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import Task from '../Task'
+import Task from '@components/Task'
 
-import { getTasks } from '../../services/tasks'
+import { getTasks } from '@services/tasks'
 
 interface TodoListProps {
   tasks: any

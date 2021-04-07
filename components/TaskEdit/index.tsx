@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { updateTask } from '../../services/tasks'
+import { updateTask } from '@services/tasks'
 
 interface TaskEditProps {
   _id: TTaskId
