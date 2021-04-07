@@ -20,7 +20,6 @@ const TodoList = ({
   useEffect(() => {
     setLoadingTasks(true)
     getTasks().then((res) => {
-      console.log(res.data.tasks)
       setTasks([...res.data.tasks] as any)
       setLoadingTasks(false)
     })
