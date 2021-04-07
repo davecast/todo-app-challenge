@@ -1,16 +1,30 @@
 import React, { useState, useRef } from 'react'
 
-const ToDoForm = () => {
-  const [task, setTask] = useState<string>('')
+import { addTask } from '../../services/tasks'
 
-  const toDoInput = useRef<HTMLInputElement>(null)
+interface ToDoFormProps {
+  task: string
+  setTask: any
+  tasks: Array<object>
+  setTasks: any
+}
+
+const ToDoForm = ({ task, setTask, tasks, setTasks }: ToDoFormProps) => {
+  const $toDoInput = useRef<HTMLInputElement>(null)
 
   const handleOnChange = () => {
-    setTask(toDoInput?.current?.value || '')
+    setTask($toDoInput?.current?.value || '')
   }
 
   const handleAddToTask = async () => {
     if (task !== '') {
+      await addTask({
+        description: task,
+        status: 'not-completed',
+      }).then((res) => {
+        setTasks([...tasks, res.data])
+      })
+
       setTask('')
     }
   }
@@ -24,7 +38,7 @@ const ToDoForm = () => {
   return (
     <div>
       <input
-        ref={toDoInput}
+        ref={$toDoInput}
         onKeyDown={handleEnter}
         onChange={handleOnChange}
         type="text"
