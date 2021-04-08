@@ -1,6 +1,7 @@
 {
   "cacheDirectories": [
-    ".next/cache"
+    "node_modules/",
+    ".next/cache/"
   ],
   "name": "todo",
   "version": "1.0.0",
