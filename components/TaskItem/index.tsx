@@ -1,3 +1,4 @@
+import React from 'react'
 import { updateTask, deleteTask } from '@services/tasks'
 
 interface TaskEditProps {

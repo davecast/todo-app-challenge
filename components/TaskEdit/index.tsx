@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { updateTask } from '@services/tasks'
 
 interface TaskEditProps {
